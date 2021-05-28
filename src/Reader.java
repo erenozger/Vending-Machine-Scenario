@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class Reader {
     public static ArrayList<String> readFile(String fileName) {
-
         //The files are read line by line and saved in the program.
         ArrayList<String> fileArray = new ArrayList<String>();
         String line;
@@ -21,5 +20,4 @@ public class Reader {
         }
         return fileArray;
     }
-
 }

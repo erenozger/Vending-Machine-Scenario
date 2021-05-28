@@ -1,18 +1,20 @@
 import java.util.ArrayList;
 
-public class Stack<Item> {
+public class Stack {
 
-    private ArrayList<Item> stackArray;
+    private ArrayList<Item> stackArray; //Stack containing items.
     private int size; //stack size
 
     public Stack() {
         this.stackArray = new ArrayList<Item>();
         this.size = 0;
+        //An empty stack structure is created in the constructor.
     }
 
     public void push(Item item) {
         stackArray.add(item);
         this.size++;
+        //When an item is added to the stack, it is added to the arraylist and you are increased by 1.
     }
 
     public Item pop() {
@@ -25,6 +27,8 @@ public class Stack<Item> {
             this.size--;
             return returnItem;
         }
+        //The size value actually specifies the last value added to the stack.
+        //For this reason, the value in the size index is the first element to be deleted from the stack, and it is reduced to 1.
     }
 
     public Item top() {
@@ -33,6 +37,7 @@ public class Stack<Item> {
         } else {
             return stackArray.get(size - 1);
         }
+        //returns topmost element of stack.
     }
 
 

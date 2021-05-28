@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 
 public class Part {
+    //Each part contains the name and the stack structure created for that name.
     private String name;
     private Stack part_stack;
 
     static ArrayList<Part> parts = new ArrayList<Part>();
+    //The Parts array contains all stacks.
 
     public Part(String name) {
         this.name = name;
@@ -18,6 +20,7 @@ public class Part {
                 new Part(partsFile.get(i));
             }
         }
+        //An empty stack is created for all parts by reading the parts.txt.
     }
 
     public static void setAllItemsToParts(ArrayList<String> itemsFile){
@@ -25,6 +28,7 @@ public class Part {
             if (itemsFile.get(i) != null) {
                 String [] itemSplit = itemsFile.get(i).split(" ");
                 getPartFromName(itemSplit[1]).getPart_stack().push(new Item(itemSplit[0],itemSplit[1]));
+                //Finds the stack structure to which the item will be added and a new item is created and saved.
             }
         }
     }
@@ -55,7 +59,7 @@ public class Part {
     }
 
     public String toString(){
-        return name + "\n" + part_stack.toString() + "---------------";
+        return name+":" + "\n" + part_stack.toString() + "---------------";
     }
 
     public static void displayAllParts(){
